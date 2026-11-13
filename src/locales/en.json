@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "TTS Studio",
+    "tagline": "MiMo Voice Workbench"
+  },
+  "nav": {
+    "speech": "Speech Synthesis",
+    "voice-design": "Voice Design",
+    "voice-clone": "Voice Clone"
+  },
+  "modes": {
+    "speech": {
+      "title": "Speech Synthesis",
+      "subtitle": "Pick a preset voice and turn Chinese or English text into natural, fluent speech."
+    },
+    "voice-design": {
+      "title": "Voice Design",
+      "subtitle": "Describe the voice you imagine — the model generates a unique timbre from your words."
+    },
+    "voice-clone": {
+      "title": "Voice Clone",
+      "subtitle": "Upload an audio sample and speak brand-new text in the cloned voice."
+    }
+  },
+  "form": {
+    "styleInstruction": "Style Instruction",
+    "optional": "optional",
+    "styleInstructionPlaceholder": "Describe the delivery style in a sentence, e.g. warm, slow, with a hint of laughter",
+    "voiceDescription": "Voice Description",
+    "voiceDescriptionPlaceholder": "Describe the voice characteristics, age, accent, mood, and speaking pace.",
+    "presetVoice": "Preset Voice",
+    "textToSpeak": "Text to Speak",
+    "textPlaceholder": "Enter Chinese or English broadcast text",
+    "tryExample": "Try an example",
+    "model": "Model",
+    "changeModel": "Change the model in settings",
+    "generate": "Generate Voice",
+    "generating": "Generating…",
+    "cancel": "Cancel",
+    "shortcutHint": "to generate",
+    "cloneAudio": "Clone Audio",
+    "uploadAudio": "Upload Audio",
+    "uploadHint": "Upload a 5–30 second MP3 or WAV sample under 10 MB.",
+    "removeAudio": "Remove audio",
+    "samplePreview": "Sample preview"
+  },
+  "result": {
+    "title": "Synthesis Result",
+    "emptyTitle": "No audio generated yet",
+    "emptyHint": "Enter text and generate a voice to see the result here.",
+    "download": "Download audio",
+    "clear": "Clear result",
+    "noAudioSupport": "Your browser does not support audio playback.",
+    "generating": "Generating speech, please wait…",
+    "textPreview": "Spoken text"
+  },
+  "settings": {
+    "title": "Settings",
+    "open": "Open settings",
+    "close": "Close",
+    "apiSection": "API Connection",
+    "baseUrl": "API Base URL",
+    "baseUrlHint": "OpenAI-compatible endpoint. Defaults to the Xiaomi MiMo open platform.",
+    "apiKey": "API Key",
+    "apiKeyHint": "Create one in the MiMo platform console. Stored only in this browser.",
+    "apiKeyPlaceholder": "Enter your API key",
+    "modelsSection": "Models",
+    "model": {
+      "speech": "Speech synthesis model",
+      "voice-design": "Voice design model",
+      "voice-clone": "Voice clone model"
+    },
+    "privacy": "All settings are stored locally in this browser and never uploaded to any server.",
+    "reset": "Restore defaults",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saved": "Settings saved",
+    "invalidBaseUrl": "Enter a valid API URL starting with http:// or https://",
+    "modelRequired": "Model ID cannot be empty",
+    "showKey": "Show key",
+    "hideKey": "Hide key"
+  },
+  "banner": {
+    "missingKey": "No API key configured yet. Add your MiMo API key before generating.",
+    "configure": "Open settings"
+  },
+  "theme": {
+    "label": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "label": "Language",
+    "zh-CN": "简体中文",
+    "en": "English"
+  },
+  "voices": {
+    "default": "MiMo Default"
+  },
+  "errors": {
+    "missingKey": "Configure your API key in settings first.",
+    "selectModel": "Configure a model in settings first.",
+    "describeVoice": "Please describe the voice you want to design.",
+    "uploadSample": "Please upload an audio sample first.",
+    "enterText": "Please enter text to speak.",
+    "onlyMp3Wav": "Only MP3 and WAV audio files are supported.",
+    "sampleTooLarge": "Audio samples must be smaller than 10 MB.",
+    "base64TooLarge": "The Base64 encoded audio sample must be smaller than 10 MB.",
+    "readFileFailed": "Failed to read audio file.",
+    "noAudioData": "The model did not return audio data.",
+    "generateFailed": "Failed to generate audio.",
+    "network": "Network request failed. Check the API URL and your connection.",
+    "cancelled": "Generation cancelled"
+  },
+  "examples": {
+    "speech": {
+      "text": "Welcome to TTS Studio! Turn any text into natural, expressive speech. The weather is lovely today — why not go for a walk?"
+    },
+    "voice-design": {
+      "description": "A woman in her twenties with a clear, gentle voice, slightly breathy, speaking slowly like a late-night radio host telling a story.",
+      "text": "The city is falling quiet tonight. Put on your headphones and let this voice read you the story of the day."
+    },
+    "voice-clone": {
+      "text": "Hello everyone, this is a brand-new line spoken with the cloned voice. Doesn't it sound just like the sample?"
+    }
+  }
+}

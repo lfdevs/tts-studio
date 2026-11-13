@@ -1,21 +1,23 @@
 import { createI18n } from 'vue-i18n'
 
-const messages = {
-  en: {
-    message: {
-      hello: 'hello world',
-    },
-  },
-  ja: {
-    message: {
-      hello: 'こんにちは、世界',
-    },
-  },
+import en from '@/locales/en.json'
+import zhCN from '@/locales/zh-CN.json'
+
+export type AppLocale = 'zh-CN' | 'en'
+
+export function detectLocale (): AppLocale {
+  return navigator.language.toLowerCase().startsWith('zh') ? 'zh-CN' : 'en'
 }
 
-export default createI18n({
+const i18n = createI18n({
   legacy: false,
-  locale: 'en',
+  globalInjection: true,
+  locale: detectLocale(),
   fallbackLocale: 'en',
-  messages,
+  messages: {
+    'zh-CN': zhCN,
+    en,
+  },
 })
+
+export default i18n

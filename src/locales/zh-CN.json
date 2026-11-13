@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "TTS Studio",
+    "tagline": "MiMo 语音工作台"
+  },
+  "nav": {
+    "speech": "语音合成",
+    "voice-design": "音色设计",
+    "voice-clone": "音色克隆"
+  },
+  "modes": {
+    "speech": {
+      "title": "语音合成",
+      "subtitle": "选择预置音色，将中英文文本转换为自然流畅的语音。"
+    },
+    "voice-design": {
+      "title": "音色设计",
+      "subtitle": "用文字描述理想中的声音，模型会按描述生成专属音色。"
+    },
+    "voice-clone": {
+      "title": "音色克隆",
+      "subtitle": "上传一段音频样本，用克隆出的声音播报全新文本。"
+    }
+  },
+  "form": {
+    "styleInstruction": "风格指令",
+    "optional": "可选",
+    "styleInstructionPlaceholder": "用一句话描述想要的语气风格，例如：温柔、缓慢、带一点笑意",
+    "voiceDescription": "音色描述",
+    "voiceDescriptionPlaceholder": "描述音色特征、年龄、口音、情绪和语速。",
+    "presetVoice": "预置音色",
+    "textToSpeak": "播报文本",
+    "textPlaceholder": "输入要播报的中文或英文文本",
+    "tryExample": "试试示例",
+    "model": "模型",
+    "changeModel": "在设置中更改模型",
+    "generate": "生成语音",
+    "generating": "正在生成…",
+    "cancel": "取消",
+    "shortcutHint": "快速生成",
+    "cloneAudio": "克隆音频",
+    "uploadAudio": "上传音频",
+    "uploadHint": "上传一段 5–30 秒且小于 10 MB 的 MP3 或 WAV 音频样本。",
+    "removeAudio": "移除音频",
+    "samplePreview": "样本试听"
+  },
+  "result": {
+    "title": "合成结果",
+    "emptyTitle": "尚未生成音频",
+    "emptyHint": "输入文本并生成语音，结果将显示在此处。",
+    "download": "下载音频",
+    "clear": "清除结果",
+    "noAudioSupport": "您的浏览器不支持音频播放。",
+    "generating": "正在生成语音，请稍候…",
+    "textPreview": "播报文本"
+  },
+  "settings": {
+    "title": "设置",
+    "open": "打开设置",
+    "close": "关闭",
+    "apiSection": "API 连接",
+    "baseUrl": "API 地址",
+    "baseUrlHint": "OpenAI 兼容接口地址，默认为小米 MiMo 开放平台。",
+    "apiKey": "API 密钥",
+    "apiKeyHint": "在 MiMo 开放平台控制台创建，仅存储在本地浏览器。",
+    "apiKeyPlaceholder": "输入 API 密钥",
+    "modelsSection": "模型",
+    "model": {
+      "speech": "语音合成模型",
+      "voice-design": "音色设计模型",
+      "voice-clone": "音色克隆模型"
+    },
+    "privacy": "所有设置仅保存在当前浏览器的本地存储中，不会上传到任何服务器。",
+    "reset": "恢复默认",
+    "cancel": "取消",
+    "save": "保存",
+    "saved": "设置已保存",
+    "invalidBaseUrl": "请输入有效的 API 地址（以 http:// 或 https:// 开头）",
+    "modelRequired": "模型 ID 不能为空",
+    "showKey": "显示密钥",
+    "hideKey": "隐藏密钥"
+  },
+  "banner": {
+    "missingKey": "尚未配置 API 密钥，请先填写 MiMo API 密钥再开始生成。",
+    "configure": "前往设置"
+  },
+  "theme": {
+    "label": "主题",
+    "system": "跟随系统",
+    "light": "浅色",
+    "dark": "深色"
+  },
+  "language": {
+    "label": "语言",
+    "zh-CN": "简体中文",
+    "en": "English"
+  },
+  "voices": {
+    "default": "MiMo-默认"
+  },
+  "errors": {
+    "missingKey": "请先在设置中配置 API 密钥。",
+    "selectModel": "请先在设置中配置模型。",
+    "describeVoice": "请描述您想设计的音色。",
+    "uploadSample": "请先上传音频样本。",
+    "enterText": "请输入要播报的文本。",
+    "onlyMp3Wav": "仅支持 MP3 和 WAV 音频文件。",
+    "sampleTooLarge": "音频样本必须小于 10 MB。",
+    "base64TooLarge": "Base64 编码后的音频样本必须小于 10 MB。",
+    "readFileFailed": "读取音频文件失败。",
+    "noAudioData": "模型没有返回音频数据。",
+    "generateFailed": "音频生成失败。",
+    "network": "网络请求失败，请检查 API 地址与网络连接。",
+    "cancelled": "已取消生成"
+  },
+  "examples": {
+    "speech": {
+      "text": "欢迎使用 TTS Studio！这里可以把文字变成自然流畅的声音。今天天气不错，要不要出去走走？"
+    },
+    "voice-design": {
+      "description": "一位二十多岁的女性，声音清澈温柔，略带气声，语速偏慢，像是在深夜电台里轻声讲故事。",
+      "text": "夜深了，城市慢慢安静下来。戴上耳机，让这段声音陪你读完今天的故事。"
+    },
+    "voice-clone": {
+      "text": "大家好，这是用克隆音色播报的一段全新内容，听起来是不是和样本里的声音一模一样？"
+    }
+  }
+}
