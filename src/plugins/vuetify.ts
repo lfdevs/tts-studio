@@ -7,11 +7,17 @@
 import { createVuetify } from 'vuetify'
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
+import { zhHans } from 'vuetify/locale'
 
 export default createVuetify({
   theme: {
     defaultTheme: 'system',
     utilities: false,
+  },
+  locale: {
+    locale: 'zhHans',
+    fallback: 'en',
+    messages: { zhHans },
   },
   display: {
     mobileBreakpoint: 'md',
