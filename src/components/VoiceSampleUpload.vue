@@ -21,7 +21,7 @@
       <v-progress-linear v-if="reading" class="upload-progress" color="voice-clone" indeterminate />
 
       <v-avatar color="voice-clone" rounded="lg" size="44" variant="tonal">
-        <v-icon icon="mdi-music-box-plus-outline" size="24" />
+        <v-icon icon="mdi-upload-outline" size="24" />
       </v-avatar>
 
       <div class="text-sm font-medium">{{ t('form.uploadAudio') }}</div>
@@ -54,6 +54,7 @@
           variant="text"
           @click="removeSample"
         >
+          <v-icon icon="mdi-delete-outline" />
           <v-tooltip activator="parent" location="bottom">{{ t('form.removeAudio') }}</v-tooltip>
         </v-btn>
       </div>

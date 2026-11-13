@@ -15,6 +15,7 @@
         <v-menu location="bottom">
           <template #activator="{ props: activatorProps }">
             <v-btn v-bind="activatorProps" :aria-label="t('language.label')" icon="mdi-translate" variant="text">
+              <v-icon icon="mdi-translate" />
               <v-tooltip activator="parent" location="bottom">{{ t('language.label') }}</v-tooltip>
             </v-btn>
           </template>
@@ -38,6 +39,7 @@
         <v-menu location="bottom">
           <template #activator="{ props: activatorProps }">
             <v-btn v-bind="activatorProps" :aria-label="t('theme.label')" :icon="themeIcon" variant="text">
+              <v-icon :icon="themeIcon" />
               <v-tooltip activator="parent" location="bottom">{{ t('theme.label') }}</v-tooltip>
             </v-btn>
           </template>
@@ -59,6 +61,7 @@
         </v-menu>
 
         <v-btn :aria-label="t('settings.open')" icon="mdi-cog-outline" variant="text" @click="app.openSettings()">
+          <v-icon icon="mdi-cog-outline" />
           <v-tooltip activator="parent" location="bottom">{{ t('settings.open') }}</v-tooltip>
         </v-btn>
       </div>

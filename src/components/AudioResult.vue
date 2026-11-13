@@ -14,6 +14,7 @@
         variant="text"
         @click="studio.clearResult(mode)"
       >
+        <v-icon icon="mdi-delete-outline" />
         <v-tooltip activator="parent" location="bottom">{{ t('result.clear') }}</v-tooltip>
       </v-btn>
     </div>
