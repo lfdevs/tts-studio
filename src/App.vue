@@ -79,6 +79,10 @@
           <v-tab prepend-icon="mdi-auto-fix" :to="{ name: 'voice-design' }" value="voice-design">
             {{ t('nav.voice-design') }}
           </v-tab>
+
+          <v-tab prepend-icon="mdi-content-copy" :to="{ name: 'voice-clone' }" value="voice-clone">
+            {{ t('nav.voice-clone') }}
+          </v-tab>
         </v-tabs>
       </template>
     </v-app-bar>

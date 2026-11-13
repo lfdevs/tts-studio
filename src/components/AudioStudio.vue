@@ -35,6 +35,10 @@
           @keydown.meta.enter.prevent="onGenerate"
         >
           <v-card-text class="p-5 md:p-6">
+            <div v-if="mode === 'voice-clone'" class="mb-5">
+              <VoiceSampleUpload />
+            </div>
+
             <div v-if="mode === 'voice-design'" class="mb-5">
               <div class="field-label">
                 {{ t('form.voiceDescription') }} <span class="required-mark">*</span>
@@ -152,6 +156,7 @@
   import { useI18n } from 'vue-i18n'
 
   import AudioResult from '@/components/AudioResult.vue'
+  import VoiceSampleUpload from '@/components/VoiceSampleUpload.vue'
   import { type AudioMode, MAX_TEXT_LENGTH, MODE_ICONS, PRESET_VOICES } from '@/constants/audio'
   import { useAppStore } from '@/stores/app'
   import { useSettingsStore } from '@/stores/settings'
