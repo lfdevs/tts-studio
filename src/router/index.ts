@@ -11,6 +11,7 @@ const router = createRouter({
   routes: [
     { path: '/', redirect: '/speech' },
     { path: '/speech', name: 'speech', component: () => import('@/pages/speech.vue') },
+    { path: '/voice-design', name: 'voice-design', component: () => import('@/pages/voice-design.vue') },
   ],
 })
 

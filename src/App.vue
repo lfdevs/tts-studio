@@ -75,6 +75,10 @@
           <v-tab prepend-icon="mdi-waveform" :to="{ name: 'speech' }" value="speech">
             {{ t('nav.speech') }}
           </v-tab>
+
+          <v-tab prepend-icon="mdi-auto-fix" :to="{ name: 'voice-design' }" value="voice-design">
+            {{ t('nav.voice-design') }}
+          </v-tab>
         </v-tabs>
       </template>
     </v-app-bar>

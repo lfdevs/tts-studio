@@ -35,7 +35,21 @@
           @keydown.meta.enter.prevent="onGenerate"
         >
           <v-card-text class="p-5 md:p-6">
-            <div class="mb-5">
+            <div v-if="mode === 'voice-design'" class="mb-5">
+              <div class="field-label">
+                {{ t('form.voiceDescription') }} <span class="required-mark">*</span>
+              </div>
+
+              <v-textarea
+                v-model="state.description"
+                auto-grow
+                :maxlength="MAX_TEXT_LENGTH"
+                :placeholder="t('form.voiceDescriptionPlaceholder')"
+                rows="3"
+              />
+            </div>
+
+            <div v-else class="mb-5">
               <div class="field-label">
                 {{ t('form.styleInstruction') }}
                 <v-chip density="compact" size="x-small" variant="tonal">{{ t('form.optional') }}</v-chip>
@@ -50,7 +64,7 @@
               />
             </div>
 
-            <div class="mb-5">
+            <div v-if="mode === 'speech'" class="mb-5">
               <div class="field-label">{{ t('form.presetVoice') }}</div>
               <v-select v-model="state.voice" item-title="name" item-value="id" :items="voiceItems" />
             </div>
@@ -109,7 +123,7 @@
                   :disabled="!canGenerate || state.loading"
                   :loading="state.loading"
                   min-width="150"
-                  prepend-icon="mdi-waveform"
+                  :prepend-icon="MODE_ICONS[mode]"
                   size="large"
                   variant="flat"
                   @click="onGenerate"
