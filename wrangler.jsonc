@@ -1,0 +1,9 @@
+// 静态 SPA 部署：直接上传 dist，阻止 wrangler 在 CI 中 auto-config 改写 Vite 配置
+{
+  "name": "tts-studio",
+  "compatibility_date": "2026-11-13",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
