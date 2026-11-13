@@ -1,93 +1,91 @@
-# tts-studio
+# TTS Studio
 
-Scaffolded with Vuetify CLI.
+基于 Vue 3 + Vuetify + Tailwind CSS 的纯前端 MiMo 语音工作台，提供 **语音合成**、**音色设计**、**音色克隆** 三大功能。无需后端服务，所有偏好设置仅保存在浏览器 localStorage 中。
 
-## ❗️ Documentation
+## 功能
 
-- Primary docs: https://vuetifyjs.com/
-- Getting started guide: https://vuetifyjs.com/en/getting-started/installation/
-- Community support: https://community.vuetifyjs.com/
-- Issue tracker: https://issues.vuetifyjs.com/
+### 语音合成
 
-## 🧱 Stack
+- 9 种预置音色：MiMo-默认、冰糖、茉莉、苏打、白桦、Mia、Chloe、Milo、Dean
+- 可选风格指令，调节语气、节奏与情绪
+- 播报文本最长 1024 字，实时字数统计，一键填入示例
 
-- Framework: Vue 3 + Vite
-- UI Library: Vuetify
-- Language: TypeScript
-- Package manager: npm
+### 音色设计
 
-## 🧭 Start Here
+- 用自然语言描述期望的声音特质，生成自定义音色
+- 可叠加可选风格指令控制播报风格
 
-- Main entry: `src/main.ts`
-- Main app component: `src/App.vue`
-- Main styles: `src/styles/`
-- Plugin setup: `src/plugins/`
+### 音色克隆
 
-## 📁 Project Structure
+- 上传 MP3 / WAV 声音样本（最大 10 MB），支持拖拽与点击选择
+- 样本页内试听、移除
+- 以样本音色合成新的播报内容
 
-- `src/main.ts` — application entry point
-- `src/App.vue` — root component
-- `src/components/` — reusable Vue components
-- `src/plugins/` — plugin registration and setup
-- `src/styles/` — global styles and theme settings
-- `public/` — static public files
+### 通用体验
 
-## ✨ Enabled Features
+- 生成过程可随时取消；错误以通知提示，不丢失已有结果
+- 合成结果页内播放、一键下载 WAV
+- Ctrl / ⌘ + Enter 快捷生成
+- 简体中文 / English 切换；浅色 / 深色 / 跟随系统主题
+- 响应式布局：桌面双栏、结果卡片吸顶，移动端单栏
 
-- ESLint
-- Pinia
-- Vue I18n
-- Vuetify MCP
-- Vue Router
-- Tailwind CSS
+## 隐私与本地存储
 
-## 💿 Install
+- 纯前端实现：浏览器直接调用 MiMo API，无后端、无中转
+- 设置（API 地址、API 密钥、各模式模型、语言、主题）仅存于 `localStorage`（键名 `tts-studio.settings.v1`）
+- API 密钥只发送到你配置的 API 地址；清除浏览器站点数据即完全移除
 
-Use your selected package manager (npm) to install dependencies:
-
-```bash
-npm install
-```
-
-## 🚀 Quick Start
+## 快速开始
 
 ```bash
 npm install
 npm run dev
 ```
 
-## 🏗️ Build
+启动后打开右上角「设置」（齿轮图标），填入 MiMo API 密钥即可使用；API 地址与模型可保持默认或自定义。
 
-```bash
-npm run build
+### 常用命令
+
+| 命令 | 说明 |
+| --- | --- |
+| `npm run dev` | 启动开发服务器 |
+| `npm run build` | 类型检查 + 生产构建 |
+| `npm run preview` | 本地预览构建产物 |
+| `npm run type-check` | Vue 类型检查 |
+| `npm run lint` / `npm run lint:fix` | ESLint 检查 / 自动修复 |
+
+## API 默认配置
+
+- 地址：`https://api.xiaomimimo.com/v1`（OpenAI 兼容接口，`POST /chat/completions`）
+- 默认模型：
+
+  | 模式 | 模型 |
+  | --- | --- |
+  | 语音合成 | `mimo-v2.5-tts` |
+  | 音色设计 | `mimo-v2.5-tts-voicedesign` |
+  | 音色克隆 | `mimo-v2.5-tts-voiceclone` |
+
+- 地址与各模式模型均可在设置中修改，并可一键恢复默认
+
+## 技术栈
+
+- Vue 3（组合式 API + `<script setup>`）+ TypeScript
+- Vite
+- Vuetify 4 —— 组件、主题与组件库国际化
+- Tailwind CSS 4 —— 布局工具类
+- Pinia —— 状态管理；Vue I18n —— 中英文；Vue Router —— 路由
+
+## 项目结构
+
+```text
+src/
+├── api/mimo.ts          # MiMo API 客户端（fetch + AbortController）
+├── components/          # AudioStudio、AudioResult、SettingsDialog、VoiceSampleUpload、WaveBars
+├── constants/audio.ts   # 模式、默认模型、预置音色、长度与大小限制
+├── locales/             # zh-CN / en 语言包
+├── pages/               # 语音合成 / 音色设计 / 音色克隆页面
+├── plugins/             # Vuetify、i18n 注册
+├── router/              # 路由定义
+├── stores/              # app（通知）、settings（本地偏好）、studio（合成状态）
+└── styles/              # 全局样式与 Vuetify Sass 配置
 ```
-
-## 🧪 Available Scripts
-
-- `npm run dev`
-- `npm run build`
-- `npm run preview`
-- `npm run build-only`
-- `npm run type-check`
-- `npm run lint`
-- `npm run lint:fix`
-
-## 🤖 Vuetify MCP Server
-
-This project is configured with the Vuetify Model Context Protocol (MCP) server.
-To install and configure the MCP server for your favorite IDE (Cursor, Trae, Windsurf, VS Code, Claude Desktop, etc.) run:
-
-```bash
-npx -y @vuetify/mcp-cli
-```
-
-This will open an interactive setup wizard to help you connect your AI assistant to the Vuetify ecosystem.
-
-## 💪 Support Vuetify Development
-
-This project uses Vuetify - an MIT licensed Open Source project. We are glad to welcome contributors and any support for ongoing development:
-
-- Contribute to Vuetify and ecosystem projects: https://github.com/vuetifyjs
-- Request enterprise support: https://support.vuetifyjs.com/
-- Sponsor on GitHub: https://github.com/sponsors/vuetifyjs
-- Support on Open Collective: https://opencollective.com/vuetify
