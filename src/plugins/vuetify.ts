@@ -64,7 +64,6 @@ export default createVuetify({
       light: studioLight,
       dark: studioDark,
     },
-    utilities: false,
   },
   locale: {
     locale: 'zhHans',

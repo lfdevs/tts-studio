@@ -152,7 +152,7 @@
   ])
 
   watch(() => settings.theme, value => {
-    theme.global.name.value = value
+    theme.change(value)
   }, { immediate: true })
 
   watch(() => settings.locale, value => {
